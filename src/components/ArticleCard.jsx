@@ -1,5 +1,3 @@
-// src/components/ArticleCard.jsx
-
 import React, { useState } from "react";
 
 function ArticleCard({ article, onToggleFavorite, isFavorite }) {
@@ -94,3 +92,4 @@ function ArticleCard({ article, onToggleFavorite, isFavorite }) {
 }
 
 export default ArticleCard;
+
