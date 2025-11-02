@@ -1,7 +1,9 @@
 // src/App.jsx
 
 import { useState, useEffect } from "react";
-import { fetchNews } from "./services/newsApi";
+//import { fetchNews } from "./services/newsApilocal";
+//import ini hanya dipakai saat kita menggunakan API key di env.local
+import { getTopHeadlines, searchNews } from "./services/newsApilocal";
 import Navbar from "./components/Navbar";
 import SearchForm from "./components/SearchForm";
 import Pagination from "./components/Pagination";
@@ -9,7 +11,6 @@ import ArticleCard from "./components/ArticleCard";
 import SkeletonCard from "./components/SkeletonCard";
 import "./index.css";
 
-// Helper function untuk mengambil data favorit dari localStorage
 const getInitialFavorites = () => {
   const savedFavorites = localStorage.getItem("favorites");
   return savedFavorites ? JSON.parse(savedFavorites) : [];
@@ -31,7 +32,8 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-
+  const pageSize = 2; //dipergunakan ketika mamakai data berita yang difetch dari mockNewsData.json agar tampilan pagination tetap ada
+  // const pageSize = 12; dipergunakan ketika mamakai data berita yang difetch API dari env.local
   // State untuk Fitur Ekstra (Bookmark)
   const [favorites, setFavorites] = useState(getInitialFavorites);
 
@@ -44,13 +46,22 @@ function App() {
 
     const getArticles = async () => {
       try {
-        const activeCategory = searchTerm ? "" : category;
-        const data = await fetchNews({
-          query: searchTerm,
-          category: activeCategory,
-          date: selectedDate,
-          page: currentPage,
-        });
+        let data;
+
+        if (searchTerm || selectedDate) {
+          data = await searchNews(
+            searchTerm,
+            selectedDate,
+            currentPage,
+            pageSize // <-- Tambahkan ini
+          );
+        } else {
+          data = await getTopHeadlines(
+            category,
+            currentPage,
+            pageSize // <-- Tambahkan ini
+          );
+        }
 
         setArticles(data.articles);
         setTotalResults(data.totalResults);
@@ -63,11 +74,6 @@ function App() {
 
     getArticles();
   }, [category, searchTerm, selectedDate, currentPage]);
-
-  // Efek untuk menyimpan favorit ke localStorage
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
 
   // === HANDLER ===
 
@@ -181,7 +187,7 @@ function App() {
               <Pagination
                 currentPage={currentPage}
                 totalResults={totalResults}
-                pageSize={10}
+                pageSize={pageSize}
                 onPageChange={handlePageChange}
               />
             </>
