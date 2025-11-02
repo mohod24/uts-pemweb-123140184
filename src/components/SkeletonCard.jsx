@@ -1,5 +1,3 @@
-// src/components/SkeletonCard.jsx
-
 import React from "react";
 
 function SkeletonCard() {
@@ -21,3 +19,4 @@ function SkeletonCard() {
 }
 
 export default SkeletonCard;
+
