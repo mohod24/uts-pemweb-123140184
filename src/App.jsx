@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import { useState, useEffect } from "react";
 //import { fetchNews } from "./services/newsApilocal";
 //import ini hanya dipakai saat kita menggunakan API key di env.local
@@ -9,6 +7,7 @@ import SearchForm from "./components/SearchForm";
 import Pagination from "./components/Pagination";
 import ArticleCard from "./components/ArticleCard";
 import SkeletonCard from "./components/SkeletonCard";
+import Footer from "./components/Footer";
 import "./index.css";
 
 const getInitialFavorites = () => {
@@ -194,6 +193,8 @@ function App() {
           )}
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
