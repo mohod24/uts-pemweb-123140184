@@ -1,5 +1,3 @@
-// src/components/SearchForm.jsx (IMPROVED VERSION)
-
 import React, { useState, useEffect } from "react";
 
 // --- FITUR EKSTRA (localStorage) ---
@@ -151,3 +149,4 @@ function SearchForm({ onSearch }) {
 }
 
 export default SearchForm;
+
