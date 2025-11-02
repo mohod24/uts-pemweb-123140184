@@ -26,7 +26,7 @@ function Pagination({ currentPage, totalResults, pageSize, onPageChange }) {
         disabled={currentPage === 1}
         className="btn btn-primary"
       >
-        &larr; Previous
+        &larr; Prev
       </button>
 
       <span className="pagination-info">
@@ -45,4 +45,5 @@ function Pagination({ currentPage, totalResults, pageSize, onPageChange }) {
 }
 
 export default Pagination;
+
 
