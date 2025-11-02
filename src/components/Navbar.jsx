@@ -8,7 +8,7 @@ function Navbar({ currentCategory, onCategoryChange }) {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h1 className="navbar-title">News Portal</h1>
+        <h1 className="navbar-title">News Portal-184</h1>
         <ul className="navbar-menu">
           {categories.map((category) => (
             <li key={category}>
@@ -29,3 +29,4 @@ function Navbar({ currentCategory, onCategoryChange }) {
 }
 
 export default Navbar;
+
