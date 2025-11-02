@@ -85,7 +85,7 @@ Jika Anda ingin memperbarui file `mockNewsData.json` dengan berita terbaru dari 
 
 Aplikasi ini telah di-hosting dan dapat diakses secara publik melalui tautan berikut:
 
-**[MASUKKAN_LINK_DEPLOYMENT_ANDA_DISINI (misal: Vercel, Netlify)]**
+**[https://uts-pemweb-123140184.vercel.app/]**
 
 ---
 
