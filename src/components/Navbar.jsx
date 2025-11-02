@@ -1,5 +1,3 @@
-// src/components/Navbar.jsx
-
 import React from "react";
 
 const categories = ["General", "Technology", "Business", "Sports"];
@@ -29,4 +27,5 @@ function Navbar({ currentCategory, onCategoryChange }) {
 }
 
 export default Navbar;
+
 
