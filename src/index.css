@@ -142,16 +142,14 @@ body {
 
 .search-form {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-end;
   gap: 1rem;
 }
 
 .form-group {
-  flex: 1 1 100%;
-  width: 100%;
-  min-width: 100%;
+  flex: 1 1 200px;
+  min-width: 200px;
 }
 
 .form-label {
@@ -699,8 +697,20 @@ body {
     justify-content: center;
   }
 
+  .search-form {
+    align-items: stretch;
+  }
+
   .form-group {
     flex: 1 1 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .form-input {
+    width: 100%;
+    max-width: 100%;
   }
 
   .form-actions {
