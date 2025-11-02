@@ -1,4 +1,3 @@
-// src/utils/fetchNewsData.js
 import axios from "axios";
 import fs from "fs";
 
