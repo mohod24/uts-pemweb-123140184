@@ -93,6 +93,5 @@ Aplikasi ini telah di-hosting dan dapat diakses secara publik melalui tautan ber
 
 Berikut adalah tampilan dari aplikasi portal berita yang sedang berjalan.
 
-*(Tips: Ganti `PATH_KE_SCREENSHOT_ANDA.png` dengan nama file screenshot Anda setelah Anda menambahkannya ke proyek)*
-
-![Tampilan Halaman Utama Aplikasi](PATH_KE_SCREENSHOT_ANDA.png)
+![Tampilan Halaman Utama Aplikasi](<img width="1919" height="920" alt="image" src="https://github.com/user-attachments/assets/fcb4c353-5dd2-4c02-aff5-f0159f702e95" />
+)
