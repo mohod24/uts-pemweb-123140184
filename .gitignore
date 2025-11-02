@@ -1,4 +1,9 @@
-# Logs
+# File .gitignore
+# File ini memberitahu Git untuk TIDAK menyimpan file/folder tertentu ke repository
+# Biasanya file yang tidak perlu disimpan: log, cache, file temporary, dll
+
+# ===== LOG FILES (File Catatan) =====
+# File log adalah catatan aktivitas aplikasi, tidak perlu disimpan ke Git
 logs
 *.log
 npm-debug.log*
@@ -7,18 +12,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# ===== DEPENDENCIES (Library/Package) =====
+# node_modules berisi semua library yang kita install
+# Folder ini SANGAT BESAR, jadi tidak perlu di-commit
+# Orang lain bisa install ulang dengan npm install
 node_modules
+
+# ===== BUILD OUTPUT (Hasil Build) =====
+# Folder ini berisi hasil build aplikasi kita
+# Tidak perlu di-commit karena bisa di-generate ulang dengan npm run build
 dist
 dist-ssr
+
+# ===== LOCAL FILES (File Lokal) =====
+# File dengan ekstensi .local biasanya untuk konfigurasi lokal tiap developer
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# ===== EDITOR SETTINGS (Pengaturan Editor) =====
+# Pengaturan dari berbagai code editor, tidak perlu dishare ke tim
+.vscode/*                    # VS Code settings
+!.vscode/extensions.json     # KECUALI file ini (! artinya exception)
+.idea                        # IntelliJ IDEA settings
+.DS_Store                    # MacOS folder settings
+*.suo                        # Visual Studio settings
+*.ntvs*                      # Node Tools for Visual Studio settings
+*.njsproj                    # Visual Studio Project settings
+*.sln                        # Visual Studio Solution settings
+*.sw?                        # Vim swap files (file temporary saat edit dengan Vim)
