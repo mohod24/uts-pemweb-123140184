@@ -1,41 +1,31 @@
 {
-  // ===== INFORMASI PROJECT =====
-  "name": "uts-pemweb-123140184",  // Nama project
-  "private": true,                 // Project ini private (tidak dipublish ke npm)
-  "version": "0.0.0",              // Versi project
-  "type": "module",                // Kita pakai ES Modules (import/export modern)
-  
-  // ===== SCRIPTS/PERINTAH =====
-  // Perintah yang bisa kita jalankan dengan npm run <nama-script>
+  "name": "uts-pemweb-123140184",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "vite",              // npm run dev: jalankan development server
-    "build": "vite build",      // npm run build: build project untuk production
-    "lint": "eslint .",         // npm run lint: check kode dengan ESLint
-    "preview": "vite preview"   // npm run preview: preview hasil build
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  
-  // ===== DEPENDENCIES =====
-  // Package yang DIPERLUKAN untuk aplikasi berjalan (production)
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.16",  // Plugin Tailwind untuk Vite
-    "react": "^19.1.1",               // React library
-    "react-dom": "^19.1.1"            // React DOM untuk render ke browser
+    "@tailwindcss/vite": "^4.1.16",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
-  
-  // ===== DEV DEPENDENCIES =====
-  // Package yang hanya diperlukan saat development (tidak untuk production)
   "devDependencies": {
-    "@eslint/js": "^9.36.0",                    // ESLint config untuk JavaScript
-    "@types/react": "^19.1.16",                 // TypeScript types untuk React
-    "@types/react-dom": "^19.1.9",              // TypeScript types untuk React DOM
-    "@vitejs/plugin-react": "^5.0.4",           // Plugin React untuk Vite
-    "autoprefixer": "^10.4.21",                 // Otomatis tambah vendor prefix di CSS
-    "eslint": "^9.36.0",                        // ESLint untuk code quality
-    "eslint-plugin-react-hooks": "^5.2.0",      // ESLint rules untuk React Hooks
-    "eslint-plugin-react-refresh": "^0.4.22",   // ESLint rules untuk React Fast Refresh
-    "globals": "^16.4.0",                       // Definisi global variables
-    "postcss": "^8.5.6",                        // Tool untuk transform CSS
-    "tailwindcss": "3.4",                       // Tailwind CSS framework
-    "vite": "^7.1.7"                            // Vite build tool
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3.4",
+    "vite": "^7.1.7"
   }
 }
