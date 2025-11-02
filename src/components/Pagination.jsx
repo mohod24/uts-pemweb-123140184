@@ -1,5 +1,3 @@
-// src/components/Pagination.jsx
-
 import React from "react";
 
 function Pagination({ currentPage, totalResults, pageSize, onPageChange }) {
@@ -47,3 +45,4 @@ function Pagination({ currentPage, totalResults, pageSize, onPageChange }) {
 }
 
 export default Pagination;
+
