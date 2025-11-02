@@ -93,7 +93,7 @@ Aplikasi ini telah di-hosting dan dapat diakses secara publik melalui tautan ber
 
 Berikut adalah tampilan dari aplikasi portal berita yang sedang berjalan.
 
-<img width="1919" height="920" alt="image" src="https://github.com/user-attachments/assets/fcb4c353-5dd2-4c02-aff5-f0159f702e95" />
+<img width="1919" height="951" alt="image" src="https://github.com/user-attachments/assets/68fb0faf-55f6-439c-87d7-f6bac3f5fab0" />
 
 <img width="653" height="903" alt="image" src="https://github.com/user-attachments/assets/c8eb1438-0149-4076-ad08-e1715dd24764" />
 
