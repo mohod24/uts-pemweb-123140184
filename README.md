@@ -65,10 +65,10 @@ Jika Anda ingin memperbarui file `mockNewsData.json` dengan berita terbaru dari 
 1.  **Dapatkan API Key:** Buat akun di [https://newsapi.org/](https://newsapi.org/) untuk mendapatkan API Key gratis Anda.
 
 2.  **Masukkan API Key:**
-    * Buka file `scripts/fetchNewsData.js`.
+    * Buka file `scripts/fetchAllNewsData.js`.
     * Ganti nilai `API_KEY` di baris ke-6 dengan API Key Anda.
     ```javascript
-    // scripts/fetchNewsData.js
+    // scripts/fetchAllNewsData.js
     const API_KEY = "MASUKKAN_API_KEY_ANDA_DISINI";
     ```
 
