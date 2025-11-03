@@ -1,13 +1,13 @@
 // Service untuk membaca data dari JSON lokal (mock data)
 
 // Import data JSON yang sudah kita simpan
-import mockNewsData from "../data/mockNewsData.json";
+import newsData from "../../scripts/src/data/newsData.json";
 
 // Validasi data saat load
-if (!mockNewsData || !mockNewsData.articles) {
-  console.error("mockNewsData.json tidak valid atau kosong!");
+if (!newsData || !newsData.articles) {
+  console.error("newsData.json tidak valid atau kosong!");
   console.error(
-    "Pastikan file src/data/mockNewsData.json ada dan berisi articles array"
+    "Pastikan file src/data/newsData.json ada dan berisi articles array"
   );
 }
 
@@ -34,11 +34,11 @@ export const getTopHeadlines = async (
   try {
     // Validasi input
     if (page < 1) {
-      console.warn("⚠️ Page tidak boleh < 1, diset ke 1");
+      console.warn("Page tidak boleh < 1, diset ke 1");
       page = 1;
     }
     if (pageSize < 1 || pageSize > 100) {
-      console.warn("⚠️ PageSize tidak valid, diset ke 12");
+      console.warn("PageSize tidak valid, diset ke 12");
       pageSize = 12;
     }
 
@@ -46,20 +46,20 @@ export const getTopHeadlines = async (
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Validasi data exists
-    if (!mockNewsData.articles || mockNewsData.articles.length === 0) {
-      throw new Error("Data artikel tidak ditemukan di mockNewsData.json");
+    if (!newsData.articles || newsData.articles.length === 0) {
+      throw new Error("Data artikel tidak ditemukan di newsData.json");
     }
 
-    let filteredArticles = [...mockNewsData.articles];
+    let filteredArticles = [...newsData.articles];
 
-    console.log("📂 Total artikel di database:", filteredArticles.length);
+    console.log("Total artikel di database:", filteredArticles.length);
 
     // ===== FILTER BERDASARKAN KATEGORI =====
     if (category) {
       // Validasi kategori
       if (!VALID_CATEGORIES.includes(category.toLowerCase())) {
         console.warn(
-          `⚠️ Kategori "${category}" tidak valid. Kategori valid:`,
+          `Kategori "${category}" tidak valid. Kategori valid:`,
           VALID_CATEGORIES
         );
       }
@@ -71,14 +71,14 @@ export const getTopHeadlines = async (
       );
 
       console.log(
-        `🏷️  Filter kategori "${category}":`,
+        `Filter kategori "${category}":`,
         filteredArticles.length,
         "artikel"
       );
 
       // Warning jika tidak ada artikel
       if (filteredArticles.length === 0) {
-        console.warn(`⚠️ Tidak ada artikel untuk kategori "${category}"`);
+        console.warn(`Tidak ada artikel untuk kategori "${category}"`);
       }
     }
 
@@ -102,12 +102,12 @@ export const getTopHeadlines = async (
     const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
 
     console.log(
-      `📄 Halaman ${page}/${totalPages}: ${paginatedArticles.length} artikel (Total: ${totalResults})`
+      `Halaman ${page}/${totalPages}: ${paginatedArticles.length} artikel (Total: ${totalResults})`
     );
 
     // Warning jika page melebihi total
     if (page > totalPages && totalResults > 0) {
-      console.warn(`⚠️ Page ${page} melebihi total halaman (${totalPages})`);
+      console.warn(`Page ${page} melebihi total halaman (${totalPages})`);
     }
 
     // ===== RETURN DATA (Format sama dengan News API) =====
@@ -125,7 +125,7 @@ export const getTopHeadlines = async (
       },
     };
   } catch (error) {
-    console.error("❌ Error in getTopHeadlines:", error);
+    console.error("Error in getTopHeadlines:", error);
     console.error("Stack trace:", error.stack);
     throw new Error("Gagal memuat data berita. Coba refresh halaman.");
   }
@@ -144,11 +144,11 @@ export const searchNews = async (
   try {
     // Validasi input
     if (page < 1) {
-      console.warn("⚠️ Page tidak boleh < 1, diset ke 1");
+      console.warn("Page tidak boleh < 1, diset ke 1");
       page = 1;
     }
     if (pageSize < 1 || pageSize > 100) {
-      console.warn("⚠️ PageSize tidak valid, diset ke 12");
+      console.warn("PageSize tidak valid, diset ke 12");
       pageSize = 12;
     }
 
@@ -156,13 +156,13 @@ export const searchNews = async (
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Validasi data exists
-    if (!mockNewsData.articles || mockNewsData.articles.length === 0) {
-      throw new Error("Data artikel tidak ditemukan di mockNewsData.json");
+    if (!newsData.articles || newsData.articles.length === 0) {
+      throw new Error("Data artikel tidak ditemukan di newsData.json");
     }
 
-    let filteredArticles = [...mockNewsData.articles];
+    let filteredArticles = [...newsData.articles];
 
-    console.log("📂 Total artikel di database:", filteredArticles.length);
+    console.log("Total artikel di database:", filteredArticles.length);
 
     // ===== FILTER BERDASARKAN SEARCH KEYWORD =====
     if (query && query.trim() !== "") {
@@ -182,14 +182,14 @@ export const searchNews = async (
       });
 
       console.log(
-        `🔍 Filter keyword "${query}":`,
+        `Filter keyword "${query}":`,
         filteredArticles.length,
         "artikel"
       );
 
       // Warning jika tidak ada hasil
       if (filteredArticles.length === 0) {
-        console.warn(`⚠️ Tidak ada hasil untuk keyword "${query}"`);
+        console.warn(`Tidak ada hasil untuk keyword "${query}"`);
       }
     }
 
@@ -199,7 +199,7 @@ export const searchNews = async (
 
       // Validasi date
       if (isNaN(fromDateTime)) {
-        console.warn(`⚠️ Format tanggal tidak valid: "${fromDate}"`);
+        console.warn(`Format tanggal tidak valid: "${fromDate}"`);
       } else {
         const beforeFilter = filteredArticles.length;
 
@@ -211,7 +211,7 @@ export const searchNews = async (
         });
 
         console.log(
-          `📅 Filter tanggal >= "${fromDate}":`,
+          `Filter tanggal >= "${fromDate}":`,
           filteredArticles.length,
           "artikel (dari",
           beforeFilter,
@@ -240,12 +240,12 @@ export const searchNews = async (
     const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
 
     console.log(
-      `📄 Halaman ${page}/${totalPages}: ${paginatedArticles.length} artikel (Total: ${totalResults})`
+      `Halaman ${page}/${totalPages}: ${paginatedArticles.length} artikel (Total: ${totalResults})`
     );
 
     // Warning jika page melebihi total
     if (page > totalPages && totalResults > 0) {
-      console.warn(`⚠️ Page ${page} melebihi total halaman (${totalPages})`);
+      console.warn(`Page ${page} melebihi total halaman (${totalPages})`);
     }
 
     // ===== RETURN DATA (Format sama dengan News API) =====
@@ -265,7 +265,7 @@ export const searchNews = async (
       },
     };
   } catch (error) {
-    console.error("❌ Error in searchNews:", error);
+    console.error("Error in searchNews:", error);
     console.error("Stack trace:", error.stack);
     throw new Error("Gagal memuat data berita. Coba refresh halaman.");
   }
