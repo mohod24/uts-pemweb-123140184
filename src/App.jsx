@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import { useState, useEffect } from "react";
 //import { fetchNews } from "./services/newsApilocal";
 //import ini hanya dipakai saat kita menggunakan API key di env.local
