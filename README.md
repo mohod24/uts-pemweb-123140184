@@ -1,4 +1,4 @@
-#  portal-berita-react-184
+#  news-portal-184
 
 Proyek ini adalah sebuah portal berita yang dibuat menggunakan React.js sebagai bagian dari Ujian Tengah Semester (UTS) Mata Kuliah Pemrograman Web.
 
