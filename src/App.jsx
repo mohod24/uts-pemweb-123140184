@@ -1,3 +1,5 @@
+// src/App.jsx
+
 import { useState, useEffect } from "react";
 //import { fetchNews } from "./services/newsApilocal";
 //import ini hanya dipakai saat kita menggunakan API key di env.local
@@ -31,7 +33,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 2; //dipergunakan ketika mamakai data berita yang difetch dari mockNewsData.json agar tampilan pagination tetap ada
+  const pageSize = 12; //dipergunakan ketika mamakai data berita yang difetch dari mockNewsData.json agar tampilan pagination tetap ada
   // const pageSize = 12; dipergunakan ketika mamakai data berita yang difetch API dari env.local
   // State untuk Fitur Ekstra (Bookmark)
   const [favorites, setFavorites] = useState(getInitialFavorites);
