@@ -83,7 +83,7 @@ function SearchForm({ onSearch }) {
             id="searchTerm"
             value={inputTerm}
             onChange={(e) => setInputTerm(e.target.value)}
-            placeholder="e.g., React, Business..."
+            placeholder="Technology.."
             className="form-input"
           />
         </div>
@@ -149,4 +149,5 @@ function SearchForm({ onSearch }) {
 }
 
 export default SearchForm;
+
 
